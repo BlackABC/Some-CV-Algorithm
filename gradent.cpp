@@ -1,5 +1,5 @@
-/*ÀûÓÃ[-1,0,1]Çó²ÊÉ«Í¼ÏñµÄÌİ¶ÈÍ¼
-  Í¼Ïñ±ß½çÀ©³ä²ÉÓÃ·´ÉäÀ©³ä·½Ê½
+/*åˆ©ç”¨[-1,0,1]æ±‚å½©è‰²å›¾åƒçš„æ¢¯åº¦å›¾
+  å›¾åƒè¾¹ç•Œæ‰©å……é‡‡ç”¨åå°„æ‰©å……æ–¹å¼
 */
 
 #include <iostream>
@@ -7,7 +7,7 @@
 #include <opencv2\imgproc\imgproc.hpp>
 #include <opencv2\highgui\highgui.hpp>
 
-//ÀûÓÃ[-1,0,1]¼ÆËãÈıÍ¨µÀÍ¼ÏñµÄÌİ¶È
+//åˆ©ç”¨[-1,0,1]è®¡ç®—ä¸‰é€šé“å›¾åƒçš„æ¢¯åº¦
 cv::Mat calculateGradentX(const cv::Mat& src)
 {
 	cv::Mat dx = cv::Mat::zeros(src.rows, src.cols, CV_32FC3);
@@ -20,7 +20,7 @@ cv::Mat calculateGradentX(const cv::Mat& src)
 		datadx = (float*)(dx.data + dx.step*i);
 		for (int j = 1; j < src.cols - 1; j++)
 		{
-			datadx[j * 3] = datasrc[(j + 1) * 3] - datasrc[(j - 1 * 3)];
+			datadx[j * 3] = datasrc[(j + 1) * 3] - datasrc[(j - 1ï¼‰ * 3];
 			datadx[j * 3 + 1] = datasrc[(j + 1) * 3 + 1] - datasrc[(j - 1) * 3 + 1];
 			datadx[j * 3 + 2] = datasrc[(j + 1) * 3 + 2] - datasrc[(j - 1) * 3 + 2];
 		}
@@ -28,7 +28,7 @@ cv::Mat calculateGradentX(const cv::Mat& src)
 	return dx;
 }
 
-//ÀûÓÃ[-1,0,1]T¼ÆËãÈıÍ¨µÀÍ¼ÏñµÄÌİ¶È
+//åˆ©ç”¨[-1,0,1]Tè®¡ç®—ä¸‰é€šé“å›¾åƒçš„æ¢¯åº¦
 cv::Mat calculateGradentY(const cv::Mat& src)
 {
 	cv::Mat dy = cv::Mat::zeros(src.rows, src.cols, CV_32FC3);
