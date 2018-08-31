@@ -20,7 +20,7 @@ cv::Mat calculateGradentX(const cv::Mat& src)
 		datadx = (float*)(dx.data + dx.step*i);
 		for (int j = 1; j < src.cols - 1; j++)
 		{
-			datadx[j * 3] = datasrc[(j + 1) * 3] - datasrc[(j - 1） * 3];
+			datadx[j * 3] = datasrc[(j + 1) * 3] - datasrc[(j - 1) * 3];
 			datadx[j * 3 + 1] = datasrc[(j + 1) * 3 + 1] - datasrc[(j - 1) * 3 + 1];
 			datadx[j * 3 + 2] = datasrc[(j + 1) * 3 + 2] - datasrc[(j - 1) * 3 + 2];
 		}
